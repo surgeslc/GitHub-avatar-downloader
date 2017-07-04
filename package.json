@@ -10,8 +10,8 @@
     "type": "git",
     "url": "git+https://github.com/surgeslc/GitHub-avatar-downloader.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ['training', 'github', 'request'],
+  "author": "Lawrence Surges",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/surgeslc/GitHub-avatar-downloader/issues"

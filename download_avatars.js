@@ -1,3 +1,7 @@
+var request = require('request');
+
+console.log('Welcome to the GitHub Avatar Downloader!');
+
 // USAGE
 // Should be executed from the command line, eg
 // node download_avatars.js jquery jquery

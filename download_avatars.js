@@ -1,13 +1,21 @@
-var request = require('request');
-
 console.log('Welcome to the GitHub Avatar Downloader!');
 
-var GITHUB_USER = process.env.DB_USER;
-var GITHUB_TOKEN = process.env.DB_PASS;
+
+const input = process.argv.slice(2);
+var repoOwner = input[0];
+var repoName = input[1];
+
+const fs = require("fs");
+const request = require('request');
+
+
+require('dotenv').config()
+const GITHUB_USER = process.env.DB_USER;
+const GITHUB_TOKEN = process.env.DB_PASS;
 
 const folderPath = "avatars/";
 
-// Make new Folder 'avatar' and handles error if it exists
+// Make new 'avatar' folder, and handle any error
 var mkdirSync = function () {
   try {
     fs.mkdirSync("avatars");
@@ -47,6 +55,6 @@ request.get(options)
 
 }
 
-  getRepoContributors("jquery", "jquery", function(err, result) {
+  getRepoContributors("lighthouse-labs", "jungle-rails", function(err, result) {
 });
 //getRepoContributors("surgeslc", "request");

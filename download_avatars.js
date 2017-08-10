@@ -26,9 +26,7 @@ var mkdirSync = function () {
 
 
 function getRepoContributors(repoOwner, repoName, cb) {
-  // ...
-// Added in Step 5:
-// Adds user-agent and moved url from within the function
+// Adds user-agent
 var options = {
   url: 'https://'+ GITHUB_USER + ':' + GITHUB_TOKEN + '@api.github.com/repos/' + repoOwner + '/' + repoName + '/contributors',
   headers: {
@@ -36,25 +34,26 @@ var options = {
   }
 };
 
-//Added in Step 5
-request.get(options)
-       .on('error', function (err) {
-         console.log('Error ', err);
-       })
-       .on('response', function (response) {
-          if (response.statusCode === 200) {
-            console.log("Result:", response.statusCode);
-          }
-          if (response.statusCode !== 200) {
-            console.log('Response Status Code: ', response.statusCode);
-          }
-       })
-       .on('data', function (chunk) {
-            console.log(chunk.toString());
-          } )
+// Request data from GitHub
+request.get(options, cb)
 
 }
 
-  getRepoContributors("lighthouse-labs", "jungle-rails", function(err, result) {
+function downloadImageByUrl(url, filePath){
+  request.get(url)
+       .on('error', function (err) {
+         throw console.log('Sorry, that didnt\' work', err);
+       })
+       .on('response', function (response) {
+         console.log('Response Status Code: ', response.statusCode);
+       })
+       .pipe(fs.createWriteStream(filePath));
+
+}
+
+
+getRepoContributors(repoOwner, repoName, function(err, result) {
+    console.log("Errors:", err);
+    var resultObj = JSON.parse(result.body);
+    resultObj.forEach((item) => downloadImageByUrl(item.avatar_url, folderPath + item.login + '.jpg'));
 });
-//getRepoContributors("surgeslc", "request");

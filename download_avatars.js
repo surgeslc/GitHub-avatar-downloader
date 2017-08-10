@@ -2,9 +2,19 @@ var request = require('request');
 
 console.log('Welcome to the GitHub Avatar Downloader!');
 
-var GITHUB_USER = "surgeslc";
-var GITHUB_TOKEN = "4f7d68aed0e41c520272e7e14f55035f395fcaec";
+var GITHUB_USER = process.env.DB_USER;
+var GITHUB_TOKEN = process.env.DB_PASS;
 
+const folderPath = "avatars/";
+
+// Make new Folder 'avatar' and handles error if it exists
+var mkdirSync = function () {
+  try {
+    fs.mkdirSync("avatars");
+  } catch(e) {
+    if ( e.code != 'EEXIST' ) throw e;
+  }
+}();
 
 
 function getRepoContributors(repoOwner, repoName, cb) {

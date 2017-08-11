@@ -8,7 +8,6 @@ var repoName = input[1];
 const fs = require("fs");
 const request = require('request');
 
-
 require('dotenv').config()
 const GITHUB_USER = process.env.DB_USER;
 const GITHUB_TOKEN = process.env.DB_PASS;
@@ -26,7 +25,7 @@ var mkdirSync = function () {
 
 
 function getRepoContributors(repoOwner, repoName, cb) {
-// Includes user-agent, which GitHub requires
+// GitHub requires a user-agent, or will throw an error
 var options = {
   url: 'https://'+ GITHUB_USER + ':' + GITHUB_TOKEN + '@api.github.com/repos/' + repoOwner + '/' + repoName + '/contributors',
   headers: {
@@ -36,6 +35,7 @@ var options = {
 
 // Request data
 request.get(options, cb)
+console.log("Connecting to GitHub");
 
 }
 
@@ -45,7 +45,10 @@ function downloadImageByUrl(url, filePath){
          throw console.log('Sorry, that didn\'t work', err);
        })
        .on('response', function (response) {
-         console.log('Response Status Code: ', response.statusCode);
+          if (response.statusCode === 200) {
+            console.log("Downloading...");
+          }
+
        })
        .pipe(fs.createWriteStream(filePath));
 
@@ -53,7 +56,10 @@ function downloadImageByUrl(url, filePath){
 
 
 getRepoContributors(repoOwner, repoName, function(err, result) {
-    console.log("Errors:", err);
+    if (err) {
+      console.log("Errors:", err);
+    }
     var resultObj = JSON.parse(result.body);
     resultObj.forEach((item) => downloadImageByUrl(item.avatar_url, folderPath + item.login + '.jpg'));
 });
+

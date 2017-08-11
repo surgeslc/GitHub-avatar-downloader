@@ -1,7 +1,7 @@
 {
   "name": "github-avatar-downloader",
   "version": "1.0.0",
-  "description": "## Problem Statement",
+  "description": "A command-line app that uses the GitHub API to download avatars of contributors to a repository, given the account and repository names",
   "main": "download_avatars.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/surgeslc/GitHub-avatar-downloader.git"
   },
-  "keywords": [],
+  "keywords": ["GitHub"],
   "author": "Lawrence Surges",
   "license": "ISC",
   "bugs": {

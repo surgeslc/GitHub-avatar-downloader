@@ -16,6 +16,8 @@ The program is run from the command line, in the following manner – `node down
 
 On completion, the program will exit: a user should see the same command prompt as before it ran.
 
+The program doesn't currently handle situations in which a user fails to enter both a repoOwner and repoName.
+
 ## Example with Comments
 
 Command Line Entered at Prompt:

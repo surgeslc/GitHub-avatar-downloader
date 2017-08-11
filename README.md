@@ -13,4 +13,3 @@ Given a GitHub repository name and owner, download all the contributors' profile
 The program is run from the command line, in the following manner – `node download_avatars.js owner repository` – where owner corresponds to a GitHub profile and repository is a repository. For [Lighthouse Labs' Jungle Rails](https://github.com/lighthouse-labs/jungle-rails), one would enter:
 
 `node download_avatars.js lighthouse-labs jungle-rails`
-

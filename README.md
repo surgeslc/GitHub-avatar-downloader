@@ -19,10 +19,15 @@ On completion, the program will exit: a user should see the same command prompt 
 ## Example
 
 Command Line Entered at Prompt:
+
 `vagrant [github-avatar-downloader]> node download_avatars.js lighthouse-labs jungle-rails`
-Output, icluding Downloading... for each avatar being downloaded:
+
+Output, including Downloading... for each avatar being downloaded:
+
 `Welcome to the GitHub Avatar Downloader!`
+
 `Connecting to GitHub`
+
 `Downloading...`
 `Downloading...`
 `Downloading...`

@@ -5,6 +5,8 @@ const input = process.argv.slice(2);
 var repoOwner = input[0];
 var repoName = input[1];
 
+
+
 const fs = require("fs");
 const request = require('request');
 
@@ -13,6 +15,21 @@ const GITHUB_USER = process.env.DB_USER;
 const GITHUB_TOKEN = process.env.DB_PASS;
 
 const folderPath = "avatars/";
+
+function checkCLInput(param1, param2) {
+  if (param2 === null || param1 === null) {
+    console.log("The GitHub Avatar Downloader needs you to specify both a repository owner and repository.");
+    console.log("To download avatars, your command line must be in the form of:");
+    console.log("node download_avatars.js repoOwner repoName");
+    console.log("");
+    console.log("The program will now terminate, but please try again!");
+    // Need needs a way to terminate ;-)
+  }
+}
+
+// Check input
+checkCLInput(repoOwner, repoName);
+
 
 // Make new 'avatar' folder, and handle any error
 var mkdirSync = function () {
@@ -56,10 +73,12 @@ function downloadImageByUrl(url, filePath){
 
 
 getRepoContributors(repoOwner, repoName, function(err, result) {
+
     if (err) {
       console.log("Errors:", err);
     }
     var resultObj = JSON.parse(result.body);
+
     resultObj.forEach((item) => downloadImageByUrl(item.avatar_url, folderPath + item.login + '.jpg'));
 });
 

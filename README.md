@@ -21,6 +21,7 @@ The program doesn't currently handle situations in which a user fails to enter b
 ## Example with Comments
 
 *Command Line Entered at Prompt:*
+
 `vagrant [github-avatar-downloader]> node download_avatars.js lighthouse-labs jungle-rails`
 
 *Output, including Downloading... for each avatar being downloaded:*

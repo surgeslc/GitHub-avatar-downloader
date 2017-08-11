@@ -29,15 +29,25 @@ Output, including Downloading... for each avatar being downloaded:
 `Connecting to GitHub`
 
 `Downloading...`
+
 `Downloading...`
+
 `Downloading...`
+
 `Downloading...`
+
 `Downloading...`
+
 On completion, the user sees a prompt:
+
 `vagrant [github-avatar-downloader]>`
+
 Running `ls avatars` confirms the avatars downloaded, then the prompt returns:
+
 `vagrant [github-avatar-downloader]> ls avatars`
+
 `adrianmcli.jpg  donburks.jpg  interlock.jpg  kvirani.jpg  vaz.jpg`
+
 `vagrant [github-avatar-downloader]>`
 
 ## Technologies

@@ -27,13 +27,14 @@ The program doesn't currently handle situations in which a user fails to enter b
 
 *Output, including Downloading... for each avatar being downloaded:*
 
-`Welcome to the GitHub Avatar Downloader!`
-`Connecting to GitHub`
-`Downloading...`
-`Downloading...`
-`Downloading...`
-`Downloading...`
-`Downloading...`
+```Welcome to the GitHub Avatar Downloader!
+Connecting to GitHub
+Downloading...
+Downloading...
+Downloading...
+Downloading...
+Downloading...
+```
 
 *On completion, the user sees a prompt:*
 `vagrant [github-avatar-downloader]>`

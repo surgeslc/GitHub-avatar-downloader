@@ -10,8 +10,9 @@ Given a GitHub profile name and repository, download contributors' profile image
 
 ## Expected Usage
 
-The program is run from the command line, in the following manner – `node download_avatars.js <owner> <repository>` – where owner corresponds to a GitHub profile and repository is one of their repositories. So to download avatars of contributors to [Lighthouse Labs' Jungle Rails](https://github.com/lighthouse-labs/jungle-rails), one would enter:
-
+The program is run from the command line, in the following manner:
+`node download_avatars.js <owner> <repository>`
+where owner corresponds to a GitHub profile and repository is one of their repositories. So to download avatars of contributors to [Lighthouse Labs' Jungle Rails](https://github.com/lighthouse-labs/jungle-rails), one would enter:
 `node download_avatars.js lighthouse-labs jungle-rails`
 
 On completion, the program will exit: a user should see the same command prompt as before it ran.

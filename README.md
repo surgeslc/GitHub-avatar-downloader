@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is a project for a Web Development Bootcamp conducted by [Lighthouse Labs](lighthouselabs.ca).
+This is a project by [Lawrence Surges](https://github.com/surgeslc) for a Web Development Bootcamp conducted by [Lighthouse Labs](lighthouselabs.ca).
 
 ## Problem Statement
 
@@ -14,7 +14,7 @@ The program is run from the command line, in the following manner – `node down
 
 `node download_avatars.js lighthouse-labs jungle-rails`
 
-On completion, the program will exit: a user should see the same command prompt as before the program ran.
+On completion, the program will exit: a user should see the same command prompt as before it ran.
 
 ## Technologies
 

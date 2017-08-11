@@ -26,15 +26,15 @@ var mkdirSync = function () {
 
 
 function getRepoContributors(repoOwner, repoName, cb) {
-// Adds user-agent
+// Includes user-agent, which GitHub requires
 var options = {
   url: 'https://'+ GITHUB_USER + ':' + GITHUB_TOKEN + '@api.github.com/repos/' + repoOwner + '/' + repoName + '/contributors',
   headers: {
-    'User-Agent': 'GitHub Avatar Downloader - Student Project'
+    'User-Agent': 'GitHub Avatar Downloader'
   }
 };
 
-// Request data from GitHub
+// Request data
 request.get(options, cb)
 
 }
@@ -42,7 +42,7 @@ request.get(options, cb)
 function downloadImageByUrl(url, filePath){
   request.get(url)
        .on('error', function (err) {
-         throw console.log('Sorry, that didnt\' work', err);
+         throw console.log('Sorry, that didn\'t work', err);
        })
        .on('response', function (response) {
          console.log('Response Status Code: ', response.statusCode);

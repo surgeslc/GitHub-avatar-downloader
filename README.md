@@ -21,10 +21,9 @@ The program doesn't currently handle situations in which a user fails to enter b
 ## Example with Comments
 
 *Command Line Entered at Prompt:*
-
 `vagrant [github-avatar-downloader]> node download_avatars.js lighthouse-labs jungle-rails`
 
-Output, including Downloading... for each avatar being downloaded:
+*Output, including Downloading... for each avatar being downloaded:*
 
 `Welcome to the GitHub Avatar Downloader!`
 
@@ -40,11 +39,11 @@ Output, including Downloading... for each avatar being downloaded:
 
 `Downloading...`
 
-On completion, the user sees a prompt:
+*On completion, the user sees a prompt:*
 
 `vagrant [github-avatar-downloader]>`
 
-Running `ls avatars` confirms the avatars downloaded, then the prompt returns:
+*Running `ls avatars` confirms the avatars downloaded, then the prompt returns:*
 
 `vagrant [github-avatar-downloader]> ls avatars`
 

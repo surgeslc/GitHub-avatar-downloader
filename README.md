@@ -46,7 +46,7 @@ vagrant [github-avatar-downloader]>
 ## Technologies
 
 This JavaScript application:
-*processes command-line input and accesses information stored in a .env file,
-*uses `request` to connect via the GitHub API and download contributors' avatars,
-*uses `fs` to write to the file system, and
-*prints to the console as it downloads.
+- processes command-line input and accesses information stored in a .env file,
+- uses `request` to connect via the GitHub API and download contributors' avatars,
+- uses `fs` to write to the file system, and
+- prints to the console as it downloads.

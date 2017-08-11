@@ -27,29 +27,19 @@ The program doesn't currently handle situations in which a user fails to enter b
 *Output, including Downloading... for each avatar being downloaded:*
 
 `Welcome to the GitHub Avatar Downloader!`
-
 `Connecting to GitHub`
-
 `Downloading...`
-
 `Downloading...`
-
 `Downloading...`
-
 `Downloading...`
-
 `Downloading...`
 
 *On completion, the user sees a prompt:*
-
 `vagrant [github-avatar-downloader]>`
 
 *Running `ls avatars` confirms the avatars downloaded, then the prompt returns:*
-
 `vagrant [github-avatar-downloader]> ls avatars`
-
 `adrianmcli.jpg  donburks.jpg  interlock.jpg  kvirani.jpg  vaz.jpg`
-
 `vagrant [github-avatar-downloader]>`
 
 ## Technologies

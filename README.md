@@ -17,7 +17,7 @@ where owner corresponds to a GitHub profile and repository is one of their repos
 
 On completion, the program will exit, and the user's prompt will reappear.
 
-<p>Any valid command line consists of four items: If there are fewer or more, a message is displayed, then the program exits gracefully. Should four items be input with an invalid repoOwner and repository combination, the program will connect to GitHub, but terminate after an error occurs at line 82.</p>
+<p>Any valid command line consists of four items: If there are fewer or more, a message is displayed, then the program exits gracefully. Should four items be input with an invalid repoOwner and repository combination, the program will connect to GitHub, but advise the user of invalid input and terminate gracefully, to avoid an error which would occur at line 87.</p>
 
 ### Example with Comments
 
@@ -43,11 +43,12 @@ adrianmcli.jpg  donburks.jpg  interlock.jpg  kvirani.jpg  vaz.jpg
 vagrant [github-avatar-downloader]>
 ```
 
-## Technologies
+## Techniques
 
 This JavaScript application:
 - processes command-line input and accesses information stored in a .env file,
 - checks the number of items entered on the command line, which should be four,
 - uses `request` to connect via the GitHub API and download contributors' avatars,
-- uses `fs` to write to the file system, and
-- prints to the console as it downloads.
+- uses `fs` to write to the file system,
+- prints to the console as it downloads, and
+- handles cases in which a user enters an invalid combination of repoOwner and repository, like `node download_avatars.js surgeslc dummy`.

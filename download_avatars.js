@@ -59,7 +59,7 @@ console.log("Connecting to GitHub");
 function downloadImageByUrl(url, filePath){
   request.get(url)
        .on('error', function (err) {
-         throw console.log('Sorry, that didn\'t work', err);
+         throw console.log("Sorry, that didn\'t work", err);
        })
        .on('response', function (response) {
           if (response.statusCode === 200) {
@@ -78,6 +78,11 @@ getRepoContributors(repoOwner, repoName, function(err, result) {
       console.log("Errors:", err);
     }
     var resultObj = JSON.parse(result.body);
+    // Handle invalid input: Advise user and exit gracefully avoiding 'resultsObj.forEach is not a function' error
+    if (resultObj.length === undefined) {
+      console.log("Sorry, the combination of repoOwner and repoName that you entered was invalid. Please try again!");
+      process.exit(-1);
+    }
 
     resultObj.forEach((item) => downloadImageByUrl(item.avatar_url, folderPath + item.login + '.jpg'));
 });

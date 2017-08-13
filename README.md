@@ -15,9 +15,9 @@ The program is run from the command line, in the following manner:<br>
 where owner corresponds to a GitHub profile and repository is one of their repositories. So to download avatars of contributors to [Lighthouse Labs' Jungle Rails](https://github.com/lighthouse-labs/jungle-rails), one would enter:<br>
 `node download_avatars.js lighthouse-labs jungle-rails`
 
-On completion, the program will exit: a user should see the same command prompt as before it ran.
+On completion, the program will exit, and the user's prompt will reappear.
 
-The program doesn't currently handle situations in which a user fails to enter both a repoOwner and repoName.
+<p>Any valid command line consists of four items: If there are fewer or more, a message is displayed, then the program exits gracefully. Should four items be input with an invalid repoOwner and repository combination, the program will connect to GitHub, but terminate after an error occurs at line 82.</p>
 
 ### Example with Comments
 
@@ -47,6 +47,7 @@ vagrant [github-avatar-downloader]>
 
 This JavaScript application:
 - processes command-line input and accesses information stored in a .env file,
+- checks the number of items entered on the command line, which should be four,
 - uses `request` to connect via the GitHub API and download contributors' avatars,
 - uses `fs` to write to the file system, and
 - prints to the console as it downloads.

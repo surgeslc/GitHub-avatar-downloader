@@ -5,30 +5,30 @@ const input = process.argv.slice(2);
 var repoOwner = input[0];
 var repoName = input[1];
 
-
-
 const fs = require("fs");
 const request = require('request');
 
 require('dotenv').config()
+
 const GITHUB_USER = process.env.DB_USER;
 const GITHUB_TOKEN = process.env.DB_PASS;
-
 const folderPath = "avatars/";
 
-function checkCLInput(param1, param2) {
-  if (param2 === null || param1 === null) {
-    console.log("The GitHub Avatar Downloader needs you to specify both a repository owner and repository.");
-    console.log("To download avatars, your command line must be in the form of:");
+function checkCLInput(cli) {
+  // process.argv contains command line input
+  // For valid input, its length is 4
+  // For anything else, advise the user and exit
+  if (process.argv.length <= 3 || process.argv.length >= 5) {
+    console.log("The app requires a repository owner and repository.");
+    console.log("A valid command line takes the form of:");
     console.log("node download_avatars.js repoOwner repoName");
-    console.log("");
-    console.log("The program will now terminate, but please try again!");
-    // Need needs a way to terminate ;-)
+    console.log("Please try again!");
+    process.exit(-1);
   }
 }
 
-// Check input
-checkCLInput(repoOwner, repoName);
+// Check user input at command line
+checkCLInput(process.argv);
 
 
 // Make new 'avatar' folder, and handle any error
